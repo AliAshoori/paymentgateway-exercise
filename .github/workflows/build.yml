@@ -1,0 +1,35 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      working-directory: ./Gateway/
+      run: dotnet restore
+    - name: Build
+      working-directory: ./Gateway/
+      run: dotnet build --no-restore
+    - name: Test APIs
+      working-directory: ./Gateway/Tests/PaymentGateway.APIs.Tests
+      run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=./Gateway/TestResults/ /p:CoverletOutputFormat=lcov
+    - name: Test Application Services
+      working-directory: ./Gateway/Tests/PaymentGateway.ApplicationServices.Tests
+      run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=./Gateway/TestResults/ /p:CoverletOutputFormat=lcov
+    - name: Test Infra Services
+      working-directory: ./Gateway/Tests/PaymentGateway.Infra.Tests
+      run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=./Gateway/TestResults/ /p:CoverletOutputFormat=lcov
+    
