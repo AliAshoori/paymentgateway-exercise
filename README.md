@@ -8,7 +8,7 @@
    
  Note: For the first run, it may take a few seconds as it needs to provision the database on your `local` server. 
  ## Bank simulator
- The `infrastructure` layer contains a set of mock services that pretend to be a bank API and mocks out various responses each time according to some confitions. Read more on this in the assumption section below.
+ The `infrastructure` layer contains a set of mock services that pretend to be a bank API and mocks out various responses each time according to some conditions. Read more on this in the assumption section below.
  ## Assumptions
  1. There a set of services in the `infrastructure` pretending to be the acquiring bank mocking out different responses according to the value of the amount property. Three different conditions have been considered for this: 
     - Normal Scenrario - wherein the `amount` value must be less than `1000` 
@@ -22,7 +22,7 @@
  4. Unit testing and integration testing
  5. Code coverage using `Fine Code Coverage`
 ## Extra miles
-1. Adding GitHub actions to have a build script that builds all the projects and runs the test projects too - the details can be accessed via the  `Actions` tab from the top menu
+1. Adding GitHub actions to have a build script that builds all the projects and runs the test projects too - the details can be accessed via the  [https://github.com/AliAshoori/paymentgateway-exercise/actions](Actions) tab from the top menu
 2. Database design - using entity framework core code first approach and its encryption feature to mask the sensitive data even on the rest
 3. Used fixed URLs for the APIs configured in the `Program.cs`
 4. Using helpful external libraries such as `FluentAssertions` and `FluentValidations` in test project and application services,respectively
