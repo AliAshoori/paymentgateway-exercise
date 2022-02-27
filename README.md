@@ -35,8 +35,14 @@
 6. We use Serilog and log everything to console, that would have been a more complete solution to use ElasticSearch and Kibana to visualize the logs making it easier to search and filter and to also implement some monitoring tools 
 7. To have an API gateway sitting in front of the APIs and it could carry out the security logics as well as acting like a load balaner
 ## Code coverage on local - screenshot
+<img width="927" alt="code-coverage-local" src="https://user-images.githubusercontent.com/7995157/155894150-31b4e7f5-53a9-4871-bbd8-f767155a350c.PNG">
+
 
 ## API response on local - showing off the HATEOS
+<img width="815" alt="api" src="https://user-images.githubusercontent.com/7995157/155894130-566ae4e0-6d1b-414b-907f-1cf19232d1d5.PNG">
+
 
 ## Test coverage report from within the build logs
+<img width="717" alt="code-coverage-sample" src="https://user-images.githubusercontent.com/7995157/155894169-508f0140-cbd5-4b49-abcf-10fc597f6896.PNG">
+
    
